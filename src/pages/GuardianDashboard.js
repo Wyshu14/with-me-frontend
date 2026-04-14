@@ -11,8 +11,9 @@ function GuardianDashboard() {
   const token = localStorage.getItem('token');
   const remindersRef = useRef([]);
 
-  const api = axios.create({
-    baseURL: 'https://with-me-backend.onrender.com/api',
+
+const api = axios.create({
+  baseURL: BASE_URL,
     headers: { Authorization: `Bearer ${token}` }
   });
 

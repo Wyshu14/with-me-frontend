@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { BASE_URL } from '../config';
 
 function Register() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ function Register() {
     if (form.password !== form.confirm) { setError('Passwords do not match'); return; }
     setLoading(true);
     try {
-      await axios.post('https://with-me-backend.onrender.com/api/auth/register', {
+      await axios.post(`${BASE_URL}/auth/register`, {
         name: form.name, email: form.email, password: form.password, role: form.role
       });
       navigate('/', { state: { message: 'Account created! Please login.' } });

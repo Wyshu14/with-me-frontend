@@ -1,4 +1,4 @@
-const BASE_URL = "https://with-me-backend.onrender.com";
+const BASE_URL = "http://localhost:5000/api";
 
 export const registerUser = async (data) => {
   const res = await fetch(`${BASE_URL}/auth/register`, {

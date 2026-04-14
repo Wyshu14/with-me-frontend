@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { BASE_URL } from '../config';
 
 function Profile() {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ function Profile() {
   const token = localStorage.getItem('token');
 
   const api = axios.create({
-    baseURL: 'https://with-me-backend.onrender.com/api',
+baseURL: BASE_URL,
     headers: { Authorization: `Bearer ${token}` }
   });
 
