@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { BASE_URL } from '../config';
 
 function FamilyMembers() {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ function FamilyMembers() {
   const token = localStorage.getItem('token');
 
   const api = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: BASE_URL,
     headers: { Authorization: `Bearer ${token}` }
   });
 
